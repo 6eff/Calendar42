@@ -7,8 +7,10 @@ import requests_cache
 import json
 from proxy.constants import BASE_URL
 from proxy.constants import CACHE_NAME
+from proxy.constants import CACHING_SEC
+from proxy.constants import BACKEND
 
-requests_cache.install_cache(cache_name=CACHE_NAME, backend='memory', expire_after=42)
+requests_cache.install_cache(cache_name=CACHE_NAME, backend=BACKEND, expire_after=CACHING_SEC)
 
 def retrieve_event(request):
     url = request.path
